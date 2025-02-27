@@ -2,7 +2,7 @@
 
 // RUN: %clang_cc1 -triple=x86_64-pc-linux-gnu -verify -fopenmp-simd -x c++ -std=c++14 -fexceptions -fcxx-exceptions %s
 
-// RUN: %clang_cc1 -verify=expected,omp52 -fopenmp -fopenmp-version=52 -ferror-limit 100 -o - %s -Wuninitialized
+// RUN: %clang_cc1 -triple=x86_64-pc-linux-gnu -verify=expected,omp52  -fopenmp -fopenmp-version=52 -ferror-limit 100 -o - %s -Wuninitialized
 
 void foo() {
 #if _OPENMP >= 202111
